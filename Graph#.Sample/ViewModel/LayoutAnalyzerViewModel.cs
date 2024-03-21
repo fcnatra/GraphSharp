@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Input;
 using GraphSharp.Sample.Model;
@@ -60,9 +61,17 @@ namespace GraphSharp.Sample.ViewModel
             CreateSampleGraphs();
         }
 
-        partial void CreateSampleGraphs();
+        private void CreateSampleGraphs()
+        {
+            IGraphGenerator graphGenerator = new SampleGraphModel2();
+            GraphModel graph = graphGenerator.Generate();
 
-        private static void Relayout()
+			GraphModels.Add(graph);
+			SelectedGraphModel = GraphModels.First();
+
+		}
+
+		private static void Relayout()
         {
             LayoutManager.Instance.Relayout();
         }

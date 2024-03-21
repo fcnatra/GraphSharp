@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 using GraphSharp.AttachedBehaviours;
 
-namespace GraphSharp.Sample.NewFolder1
+namespace GraphSharp.Sample.GraphBehaviour
 {
-
-
 	public static class DragChildrenBehaviour
     {
         #region IsDragEnabled

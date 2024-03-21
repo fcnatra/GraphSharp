@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
@@ -16,12 +17,13 @@ namespace GraphSharp.Serialization
                 using (Stream stream = File.OpenRead(filename))
                 {
                     XmlSerializer xs = XmlSerializer(typeof(T));
-                    return xs.Deserialize(stream) as T;
+					Trace.WriteLine($"{DateTime.Now.ToShortTimeString()} {filename} loaded Ok.");
+					return xs.Deserialize(stream) as T;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                // do nothing
+                Trace.WriteLine(ex);
             }
             return default(T);
         }
@@ -34,14 +36,15 @@ namespace GraphSharp.Serialization
                 using (StringReader stream = new StringReader(text))
                 {
                     XmlSerializer xs = XmlSerializer(typeof(T));
-                    return xs.Deserialize(stream) as T;
+					Trace.WriteLine($"{DateTime.Now.ToShortTimeString()} loading from text: Ok.");
+					return xs.Deserialize(stream) as T;
                 }
             }
-            catch
-            {
-                //
-            }
-            return default(T);
+            catch (Exception ex)
+			{
+				Trace.WriteLine(ex);
+			}
+			return default(T);
         }
 
         private class SwUtf8 : StringWriter

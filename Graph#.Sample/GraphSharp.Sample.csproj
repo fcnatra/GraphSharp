@@ -154,13 +154,17 @@
       <DependentUpon>MetroMainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\PocGraphInfo.cs" />
-    <Compile Include="NewFolder1\DragChildrenBehaviour.cs" />
+    <Compile Include="GraphBehaviour\DragChildrenBehaviour.cs" />
     <Compile Include="NewFolder1\TestTag.cs" />
     <Compile Include="NewFolder1\TestTagViewModel.cs" />
     <Compile Include="NewFolder1\TestTagViewModelCollection.cs" />
     <Compile Include="ViewModel\GraphLayoutCommand.cs" />
+    <Compile Include="ViewModel\SampleGraphModel2.cs" />
+    <Compile Include="ViewModel\IGraphGenerator.cs" />
     <Compile Include="ViewModel\PocGraphLayout.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="TestSimpleTagViewModel\SimpleTagViewModel.cs" />
+    <Compile Include="TestSimpleTagViewModel\SimpleTagViewModelCollection.cs" />
     <Page Include="Resources\LayoutParameterTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,7 +215,7 @@
     <Compile Include="ViewModel\LayoutAnalyzerViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\LayoutAnalyzerViewModel.SampleGraphs.cs" />
+    <Compile Include="ViewModel\SampleGraphModel1.cs" />
     <AppDesigner Include="Properties\" />
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>

@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Linq;
 using GraphSharp.Sample.Model;
 using Scraper.ViewModel.Logs;
 
 namespace GraphSharp.Sample.ViewModel
 {
-	public partial class LayoutAnalyzerViewModel
+	public class SampleGraphModel1 : IGraphGenerator
 	{
-		partial void CreateSampleGraphs()
+		public GraphModel Generate()
 		{
 			var graph = new PocGraph();
 
-		    var from = new PocVertex("Force", 32);
-		    graph.AddVertex(from);
-            Add(graph, from, TestTagViewModel.Create(), 0, 16);
+			var from = new PocVertex("Force", 32);
+			graph.AddVertex(from);
+			Add(graph, from, TestTagViewModel.Create(), 0, 16);
 
-			GraphModels.Add(new GraphModel("Fa", graph));
-		    SelectedGraphModel = GraphModels.First();
+			return new GraphModel("Fa", graph);
 		}
 
 	    private void Add(PocGraph graph, PocVertex from, TestTagViewModelCollection tags, int level, int fontsize)
