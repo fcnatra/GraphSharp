@@ -3,7 +3,7 @@
 	public class SimpleTagViewModel
 	{
 		public string Text { get; set; }
-		public SimpleTagViewModelCollection Tags  { get; set; }
+		public SimpleTagViewModelCollection Tags { get; set; }
 
 		public SimpleTagViewModel(string text)
 		{
@@ -19,17 +19,18 @@
 
 		public static SimpleTagViewModelCollection Create()
 		{
-			SimpleTagViewModelCollection tags = new SimpleTagViewModelCollection
-			{
-				new SimpleTagViewModel("1", new SimpleTagViewModelCollection
-				{
-					new SimpleTagViewModel("2", new SimpleTagViewModelCollection
-					{
-						new SimpleTagViewModel("1"),
-						//new SimpleTagViewModel("Barbra")
-					})
-				}),
-			};
+			SimpleTagViewModelCollection tags = new SimpleTagViewModelCollection();
+
+			var Barbra = new SimpleTagViewModel("Barbra");
+			var John = new SimpleTagViewModel("John");
+			var Caroline = new SimpleTagViewModel("Caroline");
+
+			John.Tags = new SimpleTagViewModelCollection { Barbra, Caroline };
+			Barbra.Tags = new SimpleTagViewModelCollection { John };
+
+			tags.Add(Barbra);
+			tags.Add(John);
+			tags.Add(Caroline);
 
 			return tags;
 		}

@@ -4,7 +4,7 @@ using Scraper.ViewModel.Logs;
 
 namespace GraphSharp.Sample.ViewModel
 {
-	public class SampleGraphModel1 : IGraphGenerator
+	public class SampleBidirectGraphModel_TestTag : IGraphGenerator
 	{
 		public GraphModel Generate()
 		{

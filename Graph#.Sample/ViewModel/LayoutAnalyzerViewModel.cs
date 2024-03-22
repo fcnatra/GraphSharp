@@ -50,7 +50,7 @@ namespace GraphSharp.Sample.ViewModel
         {
             AnalyzedLayouts = new GraphLayoutViewModel
             {
-                LayoutAlgorithmType = "EfficientSugiyama"
+                LayoutAlgorithmType = "KK"
             };
             GraphModels = new ObservableCollection<GraphModel>();
 
@@ -63,12 +63,12 @@ namespace GraphSharp.Sample.ViewModel
 
         private void CreateSampleGraphs()
         {
-            IGraphGenerator graphGenerator = new SampleGraphModel2();
-            GraphModel graph = graphGenerator.Generate();
+			IGraphGenerator graphGenerator = new SampleBidirectGraphModel_SimpleTag();
+			//IGraphGenerator graphGenerator = new SampleGraphModel_TestTag();
+			GraphModel graph = graphGenerator.Generate();
 
 			GraphModels.Add(graph);
 			SelectedGraphModel = GraphModels.First();
-
 		}
 
 		private static void Relayout()

@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Scraper.Models.Logs;
+﻿using System.Collections.ObjectModel;
 
 namespace Scraper.ViewModel.Logs
 {
-    public class TestTagViewModelCollection : Collection<TestTagViewModel>
+	public class TestTagViewModelCollection : Collection<TestTagViewModel>
     {
        
 

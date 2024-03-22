@@ -159,7 +159,8 @@
     <Compile Include="NewFolder1\TestTagViewModel.cs" />
     <Compile Include="NewFolder1\TestTagViewModelCollection.cs" />
     <Compile Include="ViewModel\GraphLayoutCommand.cs" />
-    <Compile Include="ViewModel\SampleGraphModel2.cs" />
+    <Compile Include="ViewModel\IVertexAndEdgeListGraph.cs" />
+    <Compile Include="ViewModel\SampleBidirectGraphModel_SimpleTag.cs" />
     <Compile Include="ViewModel\IGraphGenerator.cs" />
     <Compile Include="ViewModel\PocGraphLayout.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
@@ -215,7 +216,7 @@
     <Compile Include="ViewModel\LayoutAnalyzerViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\SampleGraphModel1.cs" />
+    <Compile Include="ViewModel\SampleBidirectGraphModel_TestTag.cs" />
     <AppDesigner Include="Properties\" />
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
